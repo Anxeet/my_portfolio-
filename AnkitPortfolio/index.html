@@ -29,7 +29,7 @@
 
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">Experience</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Open Source</a></li>
             </ul>
@@ -49,6 +49,28 @@
         </div>
     </nav>
 
+    <!-- Mobile Nav Panel -->
+    <div class="nav-backdrop"></div>
+    <aside class="nav-panel" aria-hidden="true" tabindex="-1">
+        <button class="nav-panel-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Open Source</a></li>
+        </ul>
+        <div class="nav-socials">
+            <a href="https://github.com/Anxeet" class="nav-icon"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/awnkeeeeeeet" class="nav-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/ankeeet" class="nav-icon"><i class="fab fa-linkedin-in"></i></a>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </aside>
+
     <!-- Hero Section -->
     <section id="home" class="hero section">
         <div class="hero-content fade-in-up">
@@ -62,6 +84,9 @@
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <a href="assets/CV.pdf" class="btn btn-resume" download="CV.pdf">
+                    <i class="fas fa-download"></i> Resume
+                </a>
             </div>
         </div>
         <div class="hero-image glass-panel fade-in-right">
@@ -109,6 +134,150 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="section-header fade-in">
+            <h2>My <span class="highlight">Experience</span></h2>
+        </div>
+
+        <div class="exp-grid">
+
+            <!-- Education Column -->
+            <div class="exp-column">
+                <h3 class="exp-column-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                <div class="timeline">
+
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag">B.Tech CSE</span>
+                                <span class="timeline-date">2023 – 2027</span>
+                            </div>
+                            <h4>Siksha 'O' Anusandhan University</h4>
+                            <p>Bachelor of Technology in Computer Science &amp; Engineering</p>
+                            <div class="timeline-meta">
+                                <span><i class="fas fa-star"></i> CGPA: 9.61</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.15s;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag">Higher Secondary</span>
+                            </div>
+                            <h4>Buxi Jagabandhu Bidyadhar Autonomous College</h4>
+                            <p>BJB Autonomous College, Bhubaneswar</p>
+                            <div class="timeline-meta">
+                                <span><i class="fas fa-star"></i> PERCENTAGE: 94%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Internships Column -->
+            <div class="exp-column">
+                <h3 class="exp-column-title"><i class="fas fa-briefcase"></i> Internships</h3>
+                <div class="timeline">
+
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag tag-webdev">Web Dev</span>
+                                <span class="timeline-date">2 Months</span>
+                            </div>
+                            <h4>Pinnacle Labs</h4>
+                            <p>Web Development Intern — Built and maintained web applications, working on frontend and
+                                backend components.</p>
+                            <div class="cert-preview">
+                                <img src="" alt="Pinnacle Labs Offer Letter" class="cert-img" id="pinnacle-cert">
+                                <span class="cert-placeholder"><i class="fas fa-file-alt"></i> Offer Letter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag tag-uiux">UI/UX</span>
+                                <span class="timeline-date">2 Months</span>
+                            </div>
+                            <h4>Skill Craft Technology</h4>
+                            <p>UI/UX Design Intern — Designed user interfaces and experiences. Holds a Letter of
+                                Recommendation.</p>
+                            <div class="cert-preview-group">
+                                <div class="cert-preview">
+                                    <img src="" alt="Skill Craft Offer Letter" class="cert-img" id="skillcraft-offer">
+                                    <span class="cert-placeholder"><i class="fas fa-file-alt"></i> Offer Letter</span>
+                                </div>
+                                <div class="cert-preview">
+                                    <img src="" alt="Skill Craft LOR" class="cert-img" id="skillcraft-lor">
+                                    <span class="cert-placeholder"><i class="fas fa-award"></i> Letter of Rec.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag tag-webdev">Web Dev</span>
+                            </div>
+                            <h4>ApexPlanet Software Pvt. Ltd.</h4>
+                            <p>Web Development Intern — Contributed to live web development projects, gaining hands-on
+                                industry experience.</p>
+                            <div class="cert-preview">
+                                <img src="" alt="ApexPlanet Offer Letter" class="cert-img" id="apexplanet-cert">
+                                <span class="cert-placeholder"><i class="fas fa-file-alt"></i> Offer Letter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag tag-ai">AI / ML</span>
+                            </div>
+                            <h4>AICTE Virtual Internship</h4>
+                            <p>Artificial Intelligence Intern — Completed AICTE's AI/ML virtual internship program,
+                                building intelligent systems and data-driven models.</p>
+                            <div class="cert-preview">
+                                <img src="" alt="AICTE Certificate" class="cert-img" id="aicte-cert">
+                                <span class="cert-placeholder"><i class="fas fa-certificate"></i> Certificate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-tag tag-uiux">UI/UX</span>
+                            </div>
+                            <h4>Novitech R&amp;D Pvt. Ltd.</h4>
+                            <p>UI/UX Design Intern — Worked on user research, wireframing, and prototyping for
+                                innovative R&amp;D products.</p>
+                            <div class="cert-preview">
+                                <img src="" alt="Novitech Offer Letter" class="cert-img" id="novitech-cert">
+                                <span class="cert-placeholder"><i class="fas fa-file-alt"></i> Offer Letter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills section">
         <div class="section-header fade-in">
@@ -118,7 +287,7 @@
             <div class="skill-card glass-card fade-in-up" style="animation-delay: 0.1s;">
                 <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
                 <h3>Software Development</h3>
-                <p>Building reliable applications with a focus on clean code and practical problem-solving. Experience
+                <p>Building reliable applications with a focus on clean code and practical problem solving. Experience
                     with backend systems like PHP.</p>
             </div>
             <div class="skill-card glass-card fade-in-up" style="animation-delay: 0.2s;">
@@ -151,9 +320,12 @@
 
             <div class="project-card glass-card fade-in-up">
                 <div class="project-img-container">
+                    <img src="assets/ecommerce-preview.png" alt="E-Commerce Platform Preview"
+                        class="project-preview-img">
                     <div class="project-overlay">
                         <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> View</a>
-                        <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/Anxeet/E-Commerce-Shopping-Website"
+                            class="btn btn-small btn-secondary"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
                 <div class="project-info">
@@ -170,28 +342,32 @@
             </div>
 
             <div class="project-card glass-card fade-in-up" style="animation-delay: 0.2s;">
-                <div class="project-img-container"
-                    style="background: linear-gradient(135deg, rgba(200, 200, 200, 0.15) 0%, rgba(20, 20, 20, 0.2) 100%);">
+                <div class="project-img-container">
+                    <img src="assets/pixelart-preview.png" alt="Pixel Art Maker Preview" class="project-preview-img">
                     <div class="project-overlay">
                         <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> View</a>
-                        <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/Anxeet/Pixel-Art-Maker" class="btn btn-small btn-secondary"><i
+                                class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Dataset Harvester & Processor</h3>
-                    <p>Developed robust scripts for taking complex, raw structured data (JSON and CSV), applying
-                        cleaning algorithms, and merging them into organized, analysis-ready formats.</p>
+                    <h3>Pixel Art Maker</h3>
+                    <p>A beautiful, interactive pixel art creation tool built with HTML, CSS, and JavaScript. Create
+                        pixel art by coloring individual squares on a customizable grid, with erase, clear, and save
+                        options for quick iteration.</p>
                     <div class="tech-stack">
-                        <span>Data Pipelines</span>
-                        <span>JSON/CSV</span>
-                        <span>Scripting</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Canvas API</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card glass-card fade-in-up" style="animation-delay: 0.4s;">
-                <div class="project-img-container"
-                    style="background: linear-gradient(135deg, rgba(200, 200, 200, 0.15) 0%, rgba(20, 20, 20, 0.2) 100%);">
+                <div class="project-img-container">
+                    <img src="assets/ml-hub-preview.png" alt="ML Concept Explainer Hub Preview"
+                        class="project-preview-img">
                     <div class="project-overlay">
                         <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> View</a>
                         <a href="#" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> Code</a>
@@ -224,14 +400,15 @@
                     want to say hi, I'll try my best to get back to you!</p>
 
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/Anxeet" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ankeeet" class="social-icon"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/awnkeeeeeeet" class="social-icon"><i class="fab fa-twitter"></i></a>
                     <a href="mailto:contact@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
 
-            <form id="contact-form" action="https://formsubmit.co/ajax/etzzzmeee@gmail.com" method="POST"
+            <form id="contact-form" action="https://formsubmit.co/ajax/838c76827f8ee1c422ed5b202071d7a6" method="POST"
                 class="contact-form">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="New message from your Portfolio!">
