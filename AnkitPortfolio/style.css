@@ -287,7 +287,9 @@ a {
 
 /* Buttons */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.8rem 1.8rem;
     border-radius: 8px;
     font-weight: 600;
@@ -295,6 +297,7 @@ a {
     transition: var(--transition-standard);
     border: none;
     font-size: 1rem;
+    gap: 0.5rem;
 }
 
 .btn-small {
@@ -330,9 +333,6 @@ a {
     background-color: transparent;
     color: var(--accent-color);
     border: 1px dashed var(--accent-color);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
     opacity: 0.85;
 }
 
@@ -1186,13 +1186,14 @@ footer p {
     }
 
     .hero-buttons {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
     }
 
     .btn {
         width: 100%;
-        text-align: center;
+        max-width: 280px;
     }
 
     .projects-grid {
