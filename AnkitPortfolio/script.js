@@ -2,34 +2,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Navigation Toggle ---
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navPanel = document.querySelector('.nav-panel');
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    const navClose = document.querySelector('.nav-panel-close');
     const links = document.querySelectorAll('.nav-link');
 
+    function openNav() {
+        if (!navPanel) return;
+        navPanel.classList.add('open');
+        navPanel.setAttribute('aria-hidden', 'false');
+        navBackdrop.classList.add('open');
+        hamburger.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.style.overflow = 'hidden';
+        // Move focus into the panel for accessibility
+        navPanel.focus();
+    }
+
+    function closeNav() {
+        if (!navPanel) return;
+        navPanel.classList.remove('open');
+        navPanel.setAttribute('aria-hidden', 'true');
+        navBackdrop.classList.remove('open');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = '';
+        // Return focus to the toggle
+        hamburger.focus();
+    }
+
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
-        // Toggle icon
-        if (navLinks.classList.contains('nav-active')) {
-            hamburger.innerHTML = '<i class="fas fa-times"></i>';
+        if (navPanel.classList.contains('open')) {
+            closeNav();
         } else {
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            openNav();
+        }
+    });
+
+    if (navBackdrop) {
+        navBackdrop.addEventListener('click', closeNav);
+    }
+
+    if (navClose) {
+        navClose.addEventListener('click', closeNav);
+    }
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navPanel && navPanel.classList.contains('open')) {
+            closeNav();
+        }
+    });
+
+    // Focus trap inside the panel when open
+    function trapFocus(e) {
+        if (!navPanel || !navPanel.classList.contains('open')) return;
+
+        const focusable = navPanel.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
+
+    navPanel.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+            trapFocus(e);
         }
     });
 
     // --- Theme Toggle ---
-    const themeToggleBtn = document.querySelector('.theme-toggle');
-    if (themeToggleBtn) {
-        const themeIcon = themeToggleBtn.querySelector('i');
-        themeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
-            
-            if (document.body.classList.contains('light-theme')) {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
+    const themeToggleButtons = document.querySelectorAll('.theme-toggle');
+    const themeIcons = document.querySelectorAll('.theme-toggle i');
+
+    function syncThemeIcons() {
+        const isLight = document.body.classList.contains('light-theme');
+        themeIcons.forEach(icon => {
+            if (isLight) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             } else {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
             }
         });
+    }
+
+    if (themeToggleButtons.length > 0) {
+        themeToggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+                syncThemeIcons();
+            });
+        });
+
+        // Ensure icons match initial state
+        syncThemeIcons();
     }
 
     // --- Starry Background Generation ---
@@ -65,8 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close mobile nav when a link is clicked
     links.forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('nav-active');
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            closeNav();
         });
     });
 
