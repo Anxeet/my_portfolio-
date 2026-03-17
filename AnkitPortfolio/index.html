@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankeeet | Portfolio</title>
+    <meta name="description" content="Ankit Kumar Das — Engineering student passionate about machine learning, backend development, and building useful technology. Explore my projects, experience, and skills.">
+    <meta property="og:title" content="Ankit Kumar Das | Portfolio">
+    <meta property="og:description" content="Engineering student passionate about ML, backend dev, and building useful technology.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ankit Kumar Das | Portfolio">
+    <meta name="twitter:description" content="Engineering student passionate about ML, backend dev, and building useful technology.">
+    <link rel="canonical" href="https://ankeeet.netlify.app/">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -31,7 +39,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Open Source</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
 
             <div class="nav-socials">
@@ -59,7 +67,7 @@
             <li><a href="#home" class="nav-link active">Home</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#skills" class="nav-link">Open Source</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
         </ul>
         <div class="nav-socials">
             <a href="https://github.com/Anxeet" class="nav-icon"><i class="fab fa-github"></i></a>
@@ -75,7 +83,7 @@
     <section id="home" class="hero section">
         <div class="hero-content fade-in-up">
             <p class="greeting">Hi, I'm</p>
-            <h1 class="name">Ankit Kumar</h1>
+            <h1 class="name">Ankit Kumar Das </h1>
             <h2 class="title type-wrap"><span class="typewriter"></span><span class="cursor">|</span></h2>
             <p class="description">
                 An engineering student passionate about exploring complex systems, turning theoretical concepts into
@@ -90,8 +98,10 @@
             </div>
         </div>
         <div class="hero-image glass-panel fade-in-right">
-            <!-- Placeholder for profile img, will try to generate an abstract tech one -->
-            <img src="assets/profile-placeholder.jpeg" alt="Abstract Tech Representation" id="profile-img">
+            <div class="hero-img-switcher">
+                <img src="assets/profile-placeholder.jpeg" alt="Ankit at night" class="hero-img-layer hero-img-dark" onerror="this.style.opacity='0'">
+                <img src="assets/mornig.jpg" alt="Ankit in the morning" class="hero-img-layer hero-img-light" onerror="this.style.opacity='0'">
+            </div>
         </div>
     </section>
 
@@ -283,6 +293,43 @@
         <div class="section-header fade-in">
             <h2>My <span class="highlight">Expertise</span></h2>
         </div>
+
+        <!-- Tech Stack Badges -->
+        <div class="tech-badges-container glass-card fade-in-up">
+            <div class="tech-badge-group">
+                <span class="tech-badge-label">Languages</span>
+                <div class="tech-badge-pills">
+                    <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-badge">C++</span>
+                    <span class="tech-badge"><i class="fab fa-java"></i> Java</span>
+                </div>
+            </div>
+            <div class="tech-badge-divider"></div>
+            <div class="tech-badge-group">
+                <span class="tech-badge-label">Frameworks & Libraries</span>
+                <div class="tech-badge-pills">
+                    <span class="tech-badge"><i class="fab fa-react"></i> React</span>
+                    <span class="tech-badge">Django</span>
+                    <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+                    <span class="tech-badge">Tailwind</span>
+                    <span class="tech-badge"><i class="fab fa-figma"></i> Figma</span>
+                </div>
+            </div>
+            <div class="tech-badge-divider"></div>
+            <div class="tech-badge-group">
+                <span class="tech-badge-label">DevOps & Tools</span>
+                <div class="tech-badge-pills">
+                    <span class="tech-badge"><i class="fab fa-aws"></i> AWS</span>
+                    <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
+                    <span class="tech-badge"><i class="fas fa-fire"></i> Firebase</span>
+                    <span class="tech-badge"><i class="fab fa-linux"></i> Linux</span>
+                    <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
+                </div>
+            </div>
+        </div>
+
         <div class="skills-grid">
             <div class="skill-card glass-card fade-in-up" style="animation-delay: 0.1s;">
                 <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
@@ -438,7 +485,12 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Ankit Kumar Das. Designed and Built with passion.</p>
+        <div class="footer-socials">
+            <a href="https://github.com/Anxeet"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/awnkeeeeeeet"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/ankeeet"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2026 Ankit Kumar Das. Designed and Built with Love n passion.</p>
     </footer>
 
     <script src="script.js"></script>
