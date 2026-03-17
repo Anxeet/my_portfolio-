@@ -83,6 +83,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Toggle ---
     const themeToggleButtons = document.querySelectorAll('.theme-toggle');
     const themeIcons = document.querySelectorAll('.theme-toggle i');
+    const starsEl = document.getElementById('stars-container');
+    let sunRaysContainer = null;
+
+    function createSunRays() {
+        if (sunRaysContainer) return; // already created
+        sunRaysContainer = document.createElement('div');
+        sunRaysContainer.id = 'sun-rays-container';
+        sunRaysContainer.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;';
+
+        const numRays = 18;
+        for (let i = 0; i < numRays; i++) {
+            const ray = document.createElement('div');
+            ray.classList.add('sun-ray');
+            const startAngle = (i / numRays) * 360;
+            const width = Math.random() * 60 + 30;    // 30px – 90px wide
+            const height = Math.random() * 40 + 30;   // 30vh – 70vh tall
+            const duration = Math.random() * 12 + 10; // 10s – 22s
+            const delay = Math.random() * -15;         // staggered start
+            ray.style.cssText = `
+                width: ${width}px;
+                height: ${height}vh;
+                left: calc(50% - ${width / 2}px);
+                top: 0;
+                --start-angle: ${startAngle}deg;
+                animation-duration: ${duration}s;
+                animation-delay: ${delay}s;
+            `;
+            sunRaysContainer.appendChild(ray);
+        }
+
+        const starsDiv = document.querySelector('.stars');
+        if (starsDiv) starsDiv.appendChild(sunRaysContainer);
+    }
+
+    function removeSunRays() {
+        if (sunRaysContainer) {
+            sunRaysContainer.remove();
+            sunRaysContainer = null;
+        }
+    }
 
     function syncThemeIcons() {
         const isLight = document.body.classList.contains('light-theme');
@@ -95,6 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-sun');
             }
         });
+
+        if (isLight) {
+            if (starsEl) starsEl.style.display = 'none';
+            createSunRays();
+        } else {
+            if (starsEl) starsEl.style.display = '';
+            removeSunRays();
+        }
     }
 
     if (themeToggleButtons.length > 0) {
